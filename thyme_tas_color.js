@@ -26,8 +26,17 @@ async function ColorConnection() {
             rgb.getRawData(function (err, colors) {
                 if (err) throw err;
 
+                console.log('getRawData ==========================================');
                 console.log('RED: ' + colors.red + ', ' + 'GREEN: ' + colors.green + ', ' + 'BLUE: ' + colors.blue);
                 console.log('CLEAR:', colors.clear);
+                console.log('=====================================================');
+            });
+            rgb.calculateColorTemperature(function (err, temp) {
+                if (err) throw err;
+
+                console.log('calculateColorTemperature ===========================');
+                console.log('temp:', temp);
+                console.log('=====================================================');
             });
 
             ledON = !ledON;
